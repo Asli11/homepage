@@ -17,7 +17,8 @@ window.onload = () => {
 		screen2.style.display = "none";
 		screen1.classList.remove("fade-out");
 		bg.classList.remove("fade-out");
-		bg.style.backgroundImage = "url(./armand-khoury-4cBVro7SHLs-unsplash.jpg)";
+		bg.style.backgroundImage =
+			"url(./assets/armand-khoury-4cBVro7SHLs-unsplash.jpg)";
 	});
 	const about = document.querySelector(".about-m");
 	const work = document.querySelector(".work-m");
