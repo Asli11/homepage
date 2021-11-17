@@ -957,7 +957,10 @@ select:invalid {
 	.projects-cards {
 		row-gap: 2rem;
 	}
-
+	.design {
+		width: 100%;
+		max-height: 180px;
+	}
 	/*
 	.timeline {
 		margin: 0;
@@ -1013,6 +1016,14 @@ select:invalid {
 	}*/
 }
 
+@media screen and (max-width: 470px) {
+	.design {
+		width: 100%;
+		max-height: 200px;
+		/* 		aspect-ratio: ;
+ */
+	}
+}
 @media screen and (min-width: 370px) {
 	.about4 .services_cont {
 		padding: 0;
