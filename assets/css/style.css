@@ -536,6 +536,10 @@ section {
 	margin: auto;
 	background: rgb(21, 21, 21);
 }
+.projects-card:not(.design) {
+	width: 180px;
+	height: 240px;
+}
 
 .projects-card img {
 	position: absolute;
@@ -546,13 +550,21 @@ section {
 	left: 0;
 }
 .hover-card {
+	display: none;
+}
+.hover-card {
+	display: block;
+}
+.hover-card {
 	position: absolute;
 	opacity: 1;
 	width: 100%;
 	height: 100%;
 
 	z-index: 1;
-	background-color: rgba(5, 3, 22, 0.863);
+}
+.hover-card:not(.design) {
+	background-color: rgba(21, 15, 61, 0.514);
 }
 .projects-descr {
 	position: absolute;
@@ -569,16 +581,6 @@ section {
 	z-index: 2;
 }
 
-.projects-card:hover .hover-card {
-	transition: 0.4s;
-	top: 100%;
-	opacity: 0;
-}
-.projects-card:hover .projects-descr {
-	transition: 0.5s;
-	top: 100%;
-	opacity: 0;
-}
 .project-link {
 	text-align: right;
 }
@@ -601,6 +603,18 @@ section {
 }
 .project-offer li {
 	margin-bottom: 1rem;
+}
+
+.design {
+	width: 340px;
+	height: 240px;
+}
+.designs {
+	/* display: flex; */
+}
+.design-cards {
+	display: flex;
+	flex-direction: column;
 }
 
 /* services */
@@ -639,38 +653,7 @@ section {
 	transition: 0.3s;
 }
 
-.services_content:hover {
-	background-color: var(--services-hover);
-	color: var(--offer-color);
-	box-shadow: 0px 0px 10px -1px #42365f;
-}
-/*
-.services_content:hover .services_icon {
-	background-color: var(--first-color-lighten);
-	color: var(--offer-color);
-}
-
-.services_content:hover .services_title,
-.services_content:hover .services_description {
-	color: var(--offer-color);
-}*/
-
 .about4 .services_content {
-	/* 	background-color: var(--offer-color); */
-	color: var(--font-color);
-}
-.services_content:hover {
-	background-color: var(--offer-color);
-
-	box-shadow: 0px 0px 10px -1px #42365f;
-}
-
-.services_content:hover .services_icon {
-	color: var(--font-color);
-}
-
-.services_content:hover .services_title,
-.services_content:hover .services_description {
 	color: var(--font-color);
 }
 
@@ -922,6 +905,12 @@ select:invalid {
 	.about-descr {
 		margin: auto;
 	}
+	/* 	.about_cont {
+		padding: 40px 50px;
+	}
+	.skills_cont {
+		width: 80%;
+	} */
 }
 /* @media screen and (min-width: 689px) {
 	.projects-cards {
@@ -1068,7 +1057,14 @@ select:invalid {
 		row-gap: 2rem;
 	}
 }
+
 @media screen and (min-width: 600px) {
+	.about_cont {
+		padding: 40px 50px;
+	}
+	/* 	.skills_cont {
+		width: 80%;
+	} */
 	.sect2 {
 		width: 90%;
 		margin: auto;
@@ -1104,6 +1100,44 @@ select:invalid {
 	.about4 .services_cont {
 		display: flex;
 		justify-content: space-evenly;
+	}
+
+	.services_content:hover {
+		background-color: var(--services-hover);
+		color: var(--offer-color);
+		box-shadow: 0px 0px 10px -1px #42365f;
+	}
+
+	.services_content:hover {
+		background-color: var(--offer-color);
+
+		box-shadow: 0px 0px 10px -1px #42365f;
+	}
+
+	.services_content:hover .services_icon {
+		color: var(--font-color);
+	}
+
+	.services_content:hover .services_title,
+	.services_content:hover .services_description {
+		color: var(--font-color);
+	}
+	.projects-card:not(.design):hover .hover-card {
+		transition: 0.4s;
+		top: 100%;
+		opacity: 0;
+	}
+	.projects-card:not(.design):hover .projects-descr {
+		transition: 0.5s;
+		top: 100%;
+		opacity: 0;
+	}
+}
+
+@media screen and (min-width: 880px) {
+	.design-cards {
+		flex-direction: row;
+		flex-wrap: wrap;
 	}
 }
 
