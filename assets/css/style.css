@@ -552,9 +552,7 @@ section {
 .hover-card {
 	display: none;
 }
-.hover-card {
-	display: block;
-}
+
 .hover-card {
 	position: absolute;
 	opacity: 1;
@@ -563,7 +561,7 @@ section {
 
 	z-index: 1;
 }
-.hover-card:not(.design) {
+.hover-card {
 	background-color: rgba(21, 15, 61, 0.514);
 }
 .projects-descr {
@@ -1133,15 +1131,18 @@ select:invalid {
 	.services_content:hover .services_description {
 		color: var(--font-color);
 	}
-	.projects-card:not(.design):hover .hover-card {
+	.projects-card:hover .hover-card {
 		transition: 0.4s;
 		top: 100%;
 		opacity: 0;
 	}
-	.projects-card:not(.design):hover .projects-descr {
+	.projects-card:hover .projects-descr {
 		transition: 0.5s;
 		top: 100%;
 		opacity: 0;
+	}
+	.hover-card {
+		display: block;
 	}
 }
 
