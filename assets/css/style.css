@@ -5,12 +5,29 @@
 	--font-color: #ebebeb;
 	--title-color: white;
 
+	/* original theme */
+	/* --bg-color: rgb(30, 30, 51); */
+	/* --bg-head: rgb(61, 61, 123); */
+	/* 	--btn-color: rgb(40, 202, 162); */
+
+	/* lila theme */
+	/* --bg-color: rgb(22 26 78); */
+	/* --bg-head: rgb(59 59 201);
+ */
+	/* --bg-head: rgb(33 23 70);
+	--bg-color: rgb(30 14 69); */
+
+	--bg-head: rgb(65 73 80);
+	--bg-color: rgb(67 77 80);
+	/* 	--bg-color: rgb(69 79 82); */
+
+	--bg-color: rgb(30 32 36);
+
 	--btn-color: rgb(40, 202, 162);
 
-	--bg-color: rgb(30, 30, 51);
-	--bg-head: rgb(61, 61, 123);
-
-	--offer-color: #171a30;
+	/* 	--offer-color: #171a30;
+ */
+	--offer-color: #25262e;
 	/* 	--services-hover: rgb(13, 134, 122); */
 	/* 	--services-hover: rgb(72, 76, 100); */
 	--services-hover: rgb(255, 255, 255);
@@ -44,6 +61,7 @@ a {
 li {
 	list-style: none;
 }
+
 nav {
 	height: var(--nav-height);
 	background: linear-gradient(
@@ -93,8 +111,8 @@ header {
 	/* 	background-image: url(../images/tom-morbey-TRuZWO_kaEY-unsplash.jpg);
  */
 	background-position: center;
-	background-image: url(../images/profile.png);
-
+	/* 	background-image: url(../images/profile.png);
+ */
 	background-size: cover;
 
 	opacity: 0.7;
@@ -144,8 +162,22 @@ header img {
 	border-radius: 50%;
 	filter: none;
 	justify-self: center;
+
 	box-shadow: 0px 0px 3px -2px white;
 }
+
+.filter {
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	justify-self: center;
+	object-fit: cover;
+	opacity: 0.6;
+	object-position: center;
+	/* 	background-color: #1ce5ece1; */
+}
+
 .name {
 	margin-top: 1rem;
 	color: var(--title-color);
@@ -155,6 +187,10 @@ header img {
 .bio {
 	margin: 0.6rem 0;
 }
+.bio span {
+	margin: 0 10px;
+}
+
 main nav ul li {
 	margin-left: 10px;
 }
@@ -529,14 +565,18 @@ section {
 	margin-top: 4rem;
 }
 .projects-card {
-	width: 180px;
-	height: 240px;
 	overflow: hidden;
 	position: relative;
 	margin: auto;
 	background: rgb(21, 21, 21);
 }
-.projects-card:not(.design) {
+
+.design-recent {
+	width: 300px;
+	height: 220px;
+}
+
+.projects-card:not(.design):not(.design-recent) {
 	width: 180px;
 	height: 240px;
 }
@@ -608,11 +648,12 @@ section {
 	height: 240px;
 }
 .designs {
-	/* display: flex; */
+	width: 100%;
 }
-.design-cards {
+.projects-cards.design-cards {
 	display: flex;
 	flex-direction: column;
+	row-gap: 5rem;
 }
 
 /* services */
@@ -903,23 +944,8 @@ select:invalid {
 	.about-descr {
 		margin: auto;
 	}
-	/* 	.about_cont {
-		padding: 40px 50px;
-	}
-	.skills_cont {
-		width: 80%;
-	} */
 }
-/* @media screen and (min-width: 689px) {
-	.projects-cards {
-		grid-template-columns: repeat(3, minmax(180px, 1fr));
-		justify-content: unset;
-	}
-	.about4 .services_cont {
-		display: flex;
-		justify-content: space-evenly;
-	}
-} */
+
 @media screen and (max-width: 340px) {
 	.about4 .services_cont {
 		margin-top: 2rem;
@@ -959,63 +985,14 @@ select:invalid {
 		width: 100%;
 		max-height: 180px;
 	}
-	/*
-	.timeline {
-		margin: 0;
+	.design-recent {
+		height: 170px;
 	}
-	.timeline ul {
-		width: 40%;
-		position: relative;
-		left: 15%;
-		flex-direction: column;
-	}
-	.timeline li {
-		margin: 10px 0;
-	}
-	.timeline-descr {
-		text-align: center;
-	}
-	.timeline-title:not(#first):not(.first-entry)::before {
-		content: "";
-		border-top: none;
-	}
-	.timeline-title:not(#first):not(.first-entry)::after {
-		content: "";
-		display: block;
-		border-top: none;
-		border-left: 2px solid rgb(0, 0, 0);
-
-		height: 80px;
-		float: left;
-	}
-	.timeline p:nth-child(2) {
-		padding-left: 9px;
-		text-align: center;
-	}
-	.line .section-title {
-		margin-bottom: 3rem;
-		text-align: center;
-	}
-	.timeline {
-		margin: 0;
-	}
-	.timeline ul {
-		width: 40%;
-
-		position: relative;
-		left: 15%;
-		flex-direction: column;
-	}
-	.timeline li {
-		margin: 10px 0;
-	}
-	.timeline-descr {
-		text-align: center;
-	}*/
 }
 
 @media screen and (max-width: 470px) {
-	.design {
+	.design,
+	.design-recent {
 		width: 100%;
 		max-height: 200px;
 		/* 		aspect-ratio: ;
@@ -1026,26 +1003,7 @@ select:invalid {
 	.about4 .services_cont {
 		padding: 0;
 	}
-	/*
-	.timeline-descr {
-		text-align: center;
-	}
-	.timeline ul {
-		width: 100%;
-	}
-	.timeline ul li {
-		min-width: 120px;
-		padding: 0 7px;
-		word-break: normal;
-	}
 
-	.timeline p:nth-child(2) {
-		padding-left: 8px;
-	}
-	.line .section-title {
-		margin-bottom: 3rem;
-		text-align: center;
-	}*/
 	.about-descr {
 		margin-top: 20px;
 		line-height: 30px;
@@ -1071,9 +1029,7 @@ select:invalid {
 	.about_cont {
 		padding: 40px 50px;
 	}
-	/* 	.skills_cont {
-		width: 80%;
-	} */
+
 	.sect2 {
 		width: 90%;
 		margin: auto;
@@ -1144,6 +1100,10 @@ select:invalid {
 	.hover-card {
 		display: block;
 	}
+	.design {
+		width: 585px;
+		height: 416px;
+	}
 }
 
 @media screen and (min-width: 880px) {
@@ -1154,33 +1114,6 @@ select:invalid {
 }
 
 @media screen and (min-width: 1024px) {
-	/* 	.timeline {
-		width: 60%;
-	}
-	.timeline ul {
-		display: block;
-	}
-	.timeline li {
-		row-gap: 0.3rem;
-		letter-spacing: 1px;
-	
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.timeline-title:not(#first):not(.first-entry)::before {
-		content: "";
-		display: block;
-		border-left: 1px solid black;
-		width: 10px;
-		height: 100px;
-		float: left;
-		margin-left: 9px;
-		border-top: none;
-	}
- */
-
 	nav {
 		height: 7vh;
 	}
@@ -1419,6 +1352,13 @@ select:invalid {
 		letter-spacing: 1px;
 		color: grey;
 		margin-bottom: 15px;
+	}
+	.projects-cards.design-cards {
+		flex-direction: row;
+	}
+	.design {
+		width: 440px;
+		height: 313px;
 	}
 }
 
